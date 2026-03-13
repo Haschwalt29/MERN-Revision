@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #777e77;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e8e8e8;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        input[type="url"],
+        input[type="time"],
+        input[type="color"],
+        input[type="range"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+            font-family: Arial, sans-serif;
+        }
+        .radio-group,
+        .checkbox-group {
+            margin: 10px 0;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+        .radio-label,
+        .checkbox-label {
+            display: inline;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        button,
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        button:hover,
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+        button:disabled,
+        input[type="submit"]:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        button:disabled:hover {
+            background-color: #cccccc;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        input[type="reset"]:hover {
+            background-color: #da190b;
+        }
+        .disabled-btn {
+            background-color: #999;
+        }
+        .disabled-btn:hover {
+            background-color: #999;
+        }
+        input[type="image"] {
+            width: 100px;
+            height: 40px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .color-input {
+            width: 150px;
+            height: 40px;
+        }
+        .range-input {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1>Student Table</h1>
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>Rohit</td>
+            <td>rohit@gmail.com</td>
+            <td>B.Tech</td>
+            <td>Chhatarpur</td>
+        </tr>
+        <tr>
+            <td>Prithvi</td>
+            <td>prithvi@gmail.com</td>
+            <td>B.Tech</td>
+            <td>Delhi</td>
+        </tr>
+        <tr>
+            <td>Aditya</td>
+            <td>aditya@gmail.com</td>
+            <td>B.Tech</td>
+            <td>Mumbai</td>
+        </tr>
+        <tr>
+            <td>Sameer</td>
+            <td>sameer@gmail.com</td>
+            <td>B.Tech</td>
+            <td>Ajmer</td>
+        </tr>
+    </table>
+
+    
+    <h2>Student Registration Form</h2>
+    <form method="POST" enctype="multipart/form-data">
+
+        
+        <div class="form-group">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male" class="radio-label">Male</label>
+
+                <input type="radio" id="female" name="gender" value="Female" required>
+                <label for="female" class="radio-label">Female</label>
+
+                <input type="radio" id="transgender" name="gender" value="Transgender" required>
+                <label for="transgender" class="radio-label">Transgender</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Skills:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="html" name="skills" value="HTML">
+                <label for="html" class="checkbox-label">HTML</label>
+
+                <input type="checkbox" id="css" name="skills" value="CSS">
+                <label for="css" class="checkbox-label">CSS</label>
+
+                <input type="checkbox" id="javascript" name="skills" value="JavaScript">
+                <label for="javascript" class="checkbox-label">JavaScript</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <select id="city" name="city" required>
+                <option value="">-- Select a City --</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Indore">Indore</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Upload Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message/Feedback:</label>
+            <textarea id="message" name="message" rows="4" cols="30" placeholder="Enter your message here..."></textarea>
+        </div>
+
+        <h3>Bonus Fields</h3>
+
+        <div class="form-group">
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color" class="color-input">
+        </div>
+
+        <div class="form-group">
+            <label for="range">Experience Level (Range 1-10):</label>
+            <input type="range" id="range" name="range" min="1" max="10" class="range-input">
+            <span id="rangeValue">5</span>
+        </div>
+
+        <div class="form-group">
+            <label for="website">Website/Portfolio URL:</label>
+            <input type="url" id="website" name="website" placeholder="https://example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="time">Preferred Contact Time:</label>
+            <input type="time" id="time" name="time">
+        </div>
+
+        <div class="button-group">
+            <input type="submit" value="Submit">
+
+            <input type="reset" value="Reset">
+
+            <button type="button" disabled>Disabled Button</button>
+        </div>
+
+        <div class="form-group">
+            <label>Image Submit Button:</label>
+            <input type="image" src="submit.png" alt="Submit" title="Click to submit the form">
+        </div>
+
+    </form>
+
+    <script>
+        const rangeInput = document.getElementById('range');
+        const rangeValue = document.getElementById('rangeValue');
+        
+        rangeInput.addEventListener('input', function() {
+            rangeValue.textContent = this.value;
+        });
+    </script>
+
+</body>
+</html>
